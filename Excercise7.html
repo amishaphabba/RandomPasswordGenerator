@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+</head>
+<style>
+     *{
+        font-size: 20px;
+        font-family: monospace;    
+    }
+
+    body{
+        background: rgba(225, 73, 73, 0.7);
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+
+    #passwordGenerator {
+        border: 2px solid black;
+        padding: 5px;
+        width: 600px;
+        min-height: 320px;
+        background-color: rgb(240, 248, 255, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #passwordType {
+        margin: auto;
+        width: 550px;
+    }
+
+    #password {
+        width: 550px;
+        min-height: 100px;
+        background-color: white;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #password p {
+        max-width: 550px;
+        word-wrap: break-word;
+    }
+
+    /* to make it responsive */
+    @media screen and (max-width: 640px) {
+
+      #passwordGenerator{
+        width: 315px;
+      }
+    
+      #passwordType{
+        width: inherit;
+      }
+
+      button{
+        margin: 3px;
+      }
+
+      #password, #password p{
+        width: inherit;
+      }
+
+    }
+
+    @media screen and (max-width: 340px) {
+        
+      #passwordGenerator{
+        width: 250px;
+      }
+
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="passwordGenerator">
+            <b>Random Password Generator</b>
+            <div id="passwordType">
+                <p style="color: white;">Select length & password type you want to generate</p>
+                <p>
+                    <label for="length">Password length</label>
+                    <input id="length" type="number" autofocus>
+                </p>
+
+                <button id="weakPass" 
+                    title="Minimum length should be 4 and includes only alphabets"
+                    onclick="WeakPass()" >Weak Password</button>
+                
+                <button id="basicPass"
+                    title="Minimum length should be 6 and includes both alphabets & digits"
+                    onclick="BasicPass()">Basic Password</button>
+
+                <button id="strongPass"
+                    title="Minimum length should be 8 and includes alphabets, digits & special characters"
+                    onclick="StrongPass()">Strong Password</button>
+
+            </div>
+
+            <div id="password">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="/Exercise7.js"></script>
+</body>
+
+</html>
